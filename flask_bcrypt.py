@@ -177,4 +177,4 @@ class Bcrypt(object):
         elif PYVER >= 3 and isinstance(password, bytes):
             password = password.decode('utf-8')
         password = str(password)
-        return safe_str_cmp(bcrypt.hashpw(password, pw_hash), pw_hash)
+        return safe_str_cmp(unicode(bcrypt.hashpw(password, pw_hash)), unicode(pw_hash))
